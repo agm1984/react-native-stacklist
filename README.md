@@ -57,3 +57,5 @@ store.getState()
 11. Provider gives the state, and connect() pumps it down into the component as props *(this.props.libraries)*
 
 `Note:` When the app boots up, all the reducers will run once to populate the state of the app.
+
+`Bonus Note:` Make sure reducers do not return undefined in the initial state.
