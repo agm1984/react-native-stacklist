@@ -41,3 +41,19 @@ const action2 = { type: 'ADD_CHARACTER', payload: 'a' }
 store.dispatch(action2)
 store.getState()
 ```
+
+# App Flow
+
+1. App boots up
+2. Redux creates a new store (createStore) using libraries reducer
+3. When store is created, it runs this reducer one time
+4. We get a piece of state called libraries *(state.libraries)*
+5. Then we pass it to the Provider as a prop
+6. It stays there for the rest of the lifespan of the application
+7. The Provider aids communication between React and Redux
+8. The App is then rendered to the screen
+9. Then the LibraryList component loaded
+10. connect() boots up, then reaches up to Provider and asks for the state
+11. Provider gives the state, and connect() pumps it down into the component as props *(this.props.libraries)*
+
+`Note:` When the app boots up, all the reducers will run once to populate the state of the app.
